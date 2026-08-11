@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import { Mail, MapPin, Phone, MessageCircle } from 'lucide-react';
-import { Eyebrow, Nabla } from '@/components/Brand';
+import type { ComponentType } from 'react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { Eyebrow, Nabla, WhatsAppGlyph } from '@/components/Brand';
 import { empresa, produtos } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -9,11 +10,26 @@ export const metadata: Metadata = {
     'Solicite a especificação e o orçamento das divisórias sanitárias do seu projeto.',
 };
 
-const canais = [
-  { icone: Phone, rotulo: 'Telefone', valor: empresa.telefone, href: `tel:${empresa.telefone}` },
+/*
+  Tipado em ComponentType para aceitar tanto os ícones do Lucide quanto o
+  glifo próprio do WhatsApp — ambos dimensionados por classe, não por prop.
+*/
+const canais: {
+  icone: ComponentType<{ className?: string }>;
+  rotulo: string;
+  valor: string;
+  href?: string;
+}[] = [
+  {
+    icone: Phone,
+    rotulo: 'Telefone',
+    valor: empresa.telefone,
+    // E.164 no href: o número formatado quebra o discador do iOS/macOS.
+    href: `tel:+${empresa.whatsapp}`,
+  },
   { icone: Mail, rotulo: 'E-mail', valor: empresa.email, href: `mailto:${empresa.email}` },
   {
-    icone: MessageCircle,
+    icone: WhatsAppGlyph,
     rotulo: 'WhatsApp',
     valor: 'Iniciar conversa',
     href: `https://wa.me/${empresa.whatsapp}`,
@@ -43,7 +59,7 @@ export default function ContatoPage() {
               const Icone = c.icone;
               const conteudo = (
                 <div className="flex items-center gap-4 py-5">
-                  <Icone size={18} className="shrink-0 text-azul-vivo" />
+                  <Icone className="h-[18px] w-[18px] shrink-0 text-azul-vivo" />
                   <div>
                     <p className="eyebrow text-tinta-400">{c.rotulo}</p>
                     <p className="mt-1 text-[15px] text-tinta-600">{c.valor}</p>

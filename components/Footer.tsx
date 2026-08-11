@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Instagram, Linkedin, MessageCircle } from 'lucide-react';
-import { Logo, ModuleRule } from './Brand';
+import { Instagram } from 'lucide-react';
+import { Logo, ModuleRule, WhatsAppGlyph } from './Brand';
 import { empresa, produtos, aplicacoes } from '@/lib/data';
 
 export function Footer() {
@@ -15,7 +15,7 @@ export function Footer() {
             {empresa.descricaoCurta} Projeto e fabricação sob uma única
             responsabilidade.
           </p>
-          <div className="mt-7 flex gap-3">
+          <div className="mt-7 flex flex-wrap items-center gap-3">
             <a
               href={empresa.instagram}
               aria-label="Instagram da DivPro"
@@ -24,18 +24,11 @@ export function Footer() {
               <Instagram size={17} />
             </a>
             <a
-              href={empresa.linkedin}
-              aria-label="LinkedIn da DivPro"
-              className="border border-white/20 p-2.5 transition-colors hover:border-azul-vivo hover:text-azul-vivo"
-            >
-              <Linkedin size={17} />
-            </a>
-            <a
               href={`https://wa.me/${empresa.whatsapp}`}
-              aria-label="WhatsApp da DivPro"
-              className="border border-white/20 p-2.5 transition-colors hover:border-azul-vivo hover:text-azul-vivo"
+              className="inline-flex items-center gap-2.5 border border-white/20 px-4 py-2.5 font-display text-[11px] font-medium uppercase tracking-label text-white transition-colors hover:border-[#25d366] hover:bg-[#25d366]"
             >
-              <MessageCircle size={17} />
+              <WhatsAppGlyph />
+              WhatsApp
             </a>
           </div>
         </div>
@@ -77,7 +70,7 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm text-gelo/70">
             <li>{empresa.endereco}</li>
             <li>
-              <a href={`tel:${empresa.telefone}`} className="hover:text-white">
+              <a href={`tel:+${empresa.whatsapp}`} className="hover:text-white">
                 {empresa.telefone}
               </a>
             </li>

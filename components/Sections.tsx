@@ -88,10 +88,10 @@ export function ProdutosGrid() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-px bg-gelo-200 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {produtos.map((p) => (
             <Link key={p.slug} href={`/solucoes/${p.slug}`}
-              className="group flex flex-col bg-white">
+              className="group flex flex-col border border-gelo-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-azul-vivo/40 hover:shadow-[0_18px_40px_-24px_rgba(1,49,133,0.5)]">
               <div className="relative aspect-[4/3] overflow-hidden bg-azul-900">
                 <Image src={p.imagem} alt={p.nome} fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -173,9 +173,10 @@ export function Aplicacoes() {
           Cada ambiente pede uma leitura diferente.
         </h2>
 
-        <div className="mt-14 grid gap-px bg-gelo-200 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {aplicacoes.map((a) => (
-            <div key={a.slug} id={a.slug} className="group scroll-mt-24 bg-white">
+            <div key={a.slug} id={a.slug}
+              className="group scroll-mt-24 border border-gelo-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-azul-vivo/40 hover:shadow-[0_18px_40px_-24px_rgba(1,49,133,0.5)]">
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image src={a.imagem} alt={`Divisórias DivPro em ambiente ${a.nome.toLowerCase()}`}
                   fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

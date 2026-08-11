@@ -12,12 +12,11 @@ export const empresa = {
   garantia: '5 anos',
   cidade: 'Recife',
   estado: 'PE',
-  telefone: '(81) 0000-0000',
+  telefone: '(81) 99117-7648',
   whatsapp: '5581991177648',
   email: 'atendimento@divpro.com.br',
   endereco: 'Recife — Pernambuco',
-  instagram: 'https://instagram.com/divpro',
-  linkedin: 'https://linkedin.com/company/divpro',
+  instagram: 'https://www.instagram.com/divprodivisorias/',
 };
 
 export type Produto = {
@@ -284,8 +283,31 @@ export const clientes = [
   { nome: 'BYD', logo: '/logos/byd.svg' },
 ];
 
-export type Representante = { estado: string; cidade: string; empresa: string };
+export type Representante = {
+  estado: string;
+  cidade: string;
+  empresa: string;
+  responsavel: string;
+  email: string;
+  telefone: string;
+  whatsapp: string;
+  endereco: string;
+  /* Consulta usada no mapa — sem travessões, para o Google resolver o pin. */
+  mapaQuery: string;
+};
 
 export const representantes: Representante[] = [
-  { estado: 'Alagoas', cidade: 'Maceió', empresa: 'Divine Divisórias' },
+  {
+    estado: 'Alagoas',
+    cidade: 'Maceió',
+    empresa: 'Divine Divisórias',
+    responsavel: 'Kleberth Domingos',
+    email: 'atendimento@divisoriasdivine.com',
+    telefone: '(81) 99999-3773',
+    whatsapp: '5581999993773',
+    endereco:
+      'Empresarial Work Center — Av. Dom Antônio Brandão, 333, Sala 403 — Farol, Maceió — AL, 57051-190',
+    mapaQuery:
+      'Divine Divisórias, Av. Dom Antônio Brandão, 333, Farol, Maceió - AL, 57051-190',
+  },
 ];
