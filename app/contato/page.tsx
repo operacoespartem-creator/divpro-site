@@ -42,7 +42,7 @@ const campo =
 
 export default function ContatoPage() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-14 md:py-20">
       <div className="container-dp grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-24">
         <div>
           <Eyebrow className="text-azul-vivo">Contato</Eyebrow>

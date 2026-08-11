@@ -31,7 +31,7 @@ const etapas = [
 export default function SobrePage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-azul-900 py-24 md:py-32">
+      <section className="relative isolate overflow-hidden bg-azul-900 py-16 md:py-24">
         <Image
           src="/images/sobre.jpg"
           alt=""
@@ -74,7 +74,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-white py-16 md:py-24">
         <div className="container-dp">
           <Eyebrow className="text-azul-vivo">Como um projeto anda</Eyebrow>
           <h2 className="h-display mt-6 max-w-2xl text-3xl text-tinta md:text-[2.75rem]">
@@ -85,7 +85,7 @@ export default function SobrePage() {
             Numeração aqui carrega informação real: é uma sequência,
             cada etapa depende da anterior.
           */}
-          <ol className="mt-16 grid gap-px bg-gelo-200 md:grid-cols-3">
+          <ol className="mt-12 grid gap-px bg-gelo-200 md:grid-cols-3">
             {etapas.map((e, i) => (
               <li key={e.titulo} className="bg-white p-8">
                 <div className="flex items-center gap-3">
@@ -108,7 +108,7 @@ export default function SobrePage() {
 
       <section className="bg-gelo-50">
         <ModuleRule className="text-gelo-300" />
-        <div className="container-dp py-20 text-center md:py-24">
+        <div className="container-dp py-14 text-center md:py-20">
           <h2 className="h-display mx-auto max-w-2xl text-3xl text-tinta md:text-4xl">
             Tem um projeto em especificação?
           </h2>

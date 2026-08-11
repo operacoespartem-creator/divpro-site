@@ -28,13 +28,9 @@ export default function SolucaoPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      {/* Cabeçalho tipográfico — a foto entra logo abaixo, em faixa larga */}
-      <section className="relative isolate overflow-hidden bg-azul-dp">
-        <div
-          aria-hidden="true"
-          className="modules absolute inset-0 text-white/[0.07]"
-        />
-        <div className="container-dp relative py-16 md:py-20">
+      {/* Barra de retorno — faixa fina, na altura de um cabeçalho */}
+      <section className="bg-azul-900">
+        <div className="container-dp flex h-14 items-center">
           <Link
             href="/#solucoes"
             className="inline-flex items-center gap-2 font-display text-[11px] uppercase tracking-label text-gelo/55 transition-colors hover:text-azul-vivo"
@@ -42,42 +38,52 @@ export default function SolucaoPage({ params }: { params: { slug: string } }) {
             <ArrowLeft size={14} />
             Todas as soluções
           </Link>
-
-          <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end">
-            <div>
-              <Eyebrow className="text-azul-vivo">{produto.categoria}</Eyebrow>
-              <h1 className="h-display mt-5 text-[2.4rem] text-white md:text-6xl">
-                {produto.nome}
-              </h1>
-              {produto.sub && (
-                <p className="eyebrow mt-4 text-white/60">{produto.sub}</p>
-              )}
-            </div>
-            <div className="lg:pb-2">
-              <p className="text-lg leading-relaxed text-white/70">{produto.resumo}</p>
-              <SeloGarantia className="mt-8" />
-            </div>
-          </div>
         </div>
       </section>
 
       {/*
-        As fotos são 16:9 (não panorâmicas). Manter a mesma proporção larga
-        do mobile no desktop em vez de aspect-[21/7] — esse crop mais agressivo
-        cortava quase metade da altura da imagem.
+        Hero com a foto de fundo e o degradê institucional por cima — o mesmo
+        gesto da home e da página Sobre. Substitui a faixa azul cheia + tira
+        de foto: a foto ocupa o bloco inteiro e sobra menos azul chapado.
       */}
-      <section className="relative aspect-[16/7] w-full overflow-hidden bg-azul-900">
+      <section className="relative isolate overflow-hidden bg-azul-900">
         <Image
           src={produto.imagem}
           alt={`Aplicação da linha ${produto.nome}`}
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-center"
         />
+        <div aria-hidden="true" className="modules absolute inset-0 text-white/[0.1]" />
+        {/*
+          No mobile o degradê desce (texto no topo, foto respirando embaixo);
+          no desktop ele corre para a direita, como na home. Horizontal no
+          celular escureceria a tela inteira e sumiria com a foto.
+        */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-azul-900 via-azul-900/85 to-azul-900/30 md:bg-gradient-to-r md:to-azul-900/25"
+        />
+
+        <div className="container-dp relative py-16 md:py-24 lg:py-28">
+          <div className="max-w-2xl">
+            <Eyebrow className="text-white/70">{produto.categoria}</Eyebrow>
+            <h1 className="h-display mt-5 text-[2.4rem] text-white md:text-6xl">
+              {produto.nome}
+            </h1>
+            {produto.sub && (
+              <p className="eyebrow mt-4 text-white/60">{produto.sub}</p>
+            )}
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/75">
+              {produto.resumo}
+            </p>
+            <SeloGarantia className="mt-9" />
+          </div>
+        </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-14 md:py-20">
         <div className="container-dp grid gap-14 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
           <div>
             <Eyebrow className="text-azul-vivo">A linha</Eyebrow>
@@ -105,7 +111,7 @@ export default function SolucaoPage({ params }: { params: { slug: string } }) {
 
       <section className="bg-gelo-50">
         <ModuleRule className="text-gelo-300" />
-        <div className="container-dp py-20 md:py-24">
+        <div className="container-dp py-14 md:py-20">
           <Eyebrow className="text-azul-vivo">Outras linhas</Eyebrow>
           <div className="mt-10 grid gap-px bg-gelo-200 sm:grid-cols-3">
             {outras.map((p) => (

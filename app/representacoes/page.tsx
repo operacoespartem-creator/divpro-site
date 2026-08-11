@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RepresentacoesPage() {
   return (
     <>
-      <section className="border-b border-gelo-200 bg-white py-20 md:py-28">
+      <section className="border-b border-gelo-200 bg-white py-14 md:py-20">
         <div className="container-dp">
           <Eyebrow className="text-azul-vivo">Representações</Eyebrow>
           <h1 className="h-display mt-6 max-w-3xl text-[2.4rem] text-tinta md:text-6xl">
@@ -26,7 +26,7 @@ export default function RepresentacoesPage() {
         </div>
       </section>
 
-      <section className="bg-gelo-50 py-20 md:py-28">
+      <section className="bg-gelo-50 py-14 md:py-20">
         <div className="container-dp space-y-8">
           {representantes.map((r) => (
             <article
@@ -119,7 +119,7 @@ export default function RepresentacoesPage() {
 
       <section className="bg-white">
         <ModuleRule className="text-gelo-300" />
-        <div className="container-dp py-20 text-center md:py-24">
+        <div className="container-dp py-14 text-center md:py-20">
           <h2 className="h-display mx-auto max-w-2xl text-3xl text-tinta md:text-4xl">
             Quer representar a DivPro na sua região?
           </h2>

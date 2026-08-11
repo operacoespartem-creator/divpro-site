@@ -8,8 +8,13 @@ export function Footer() {
     <footer className="bg-azul-900 text-gelo">
       <ModuleRule className="text-white/10" />
 
-      <div className="container-dp grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
-        <div className="lg:col-span-1">
+      {/*
+        Duas colunas já no mobile: Soluções e Aplicações ocupam uma cada,
+        marca e contato atravessam as duas. Empilhar as quatro deixava o
+        rodapé longo demais no celular.
+      */}
+      <div className="container-dp grid grid-cols-2 gap-x-8 gap-y-10 py-14 lg:grid-cols-4 lg:gap-12">
+        <div className="col-span-2 lg:col-span-1">
           <Logo variant="light" width={172} />
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-gelo/70">
             {empresa.descricaoCurta} Projeto e fabricação sob uma única
@@ -65,7 +70,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <h3 className="eyebrow text-azul-vivo">Contato</h3>
           <ul className="mt-5 space-y-3 text-sm text-gelo/70">
             <li>{empresa.endereco}</li>

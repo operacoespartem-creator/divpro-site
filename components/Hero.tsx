@@ -17,7 +17,9 @@ export function Hero() {
       <div aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-r from-azul-900 via-azul-900/85 to-azul-900/20" />
 
-      <div className="container-dp relative py-24 md:py-32 lg:py-40">
+      {/* Respiro assimétrico: sobra em cima, aperta embaixo para o selo não
+          ficar solto acima da faixa Projeto · Fabricação. */}
+      <div className="container-dp relative pb-12 pt-20 md:pb-14 md:pt-24 lg:pb-16 lg:pt-28">
         <div className="max-w-2xl animate-riseIn">
           <Eyebrow className="text-white/70">Divisórias sanitárias</Eyebrow>
 
@@ -41,7 +43,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <SeloGarantia className="mt-12" />
+          <SeloGarantia className="mt-9" />
         </div>
       </div>
 

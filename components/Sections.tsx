@@ -42,7 +42,7 @@ export function Marquee() {
 /** Os quatro argumentos do portfólio, sobre o degradê institucional. */
 export function PorQue() {
   return (
-    <section className="relative isolate overflow-hidden bg-azul-dp py-24 md:py-28">
+    <section className="relative isolate overflow-hidden bg-azul-dp py-16 md:py-20">
       <div aria-hidden="true" className="modules-tight absolute inset-0 text-white/[0.06]" />
 
       <div className="container-dp relative">
@@ -55,7 +55,7 @@ export function PorQue() {
           <SeloGarantia className="md:pt-3" />
         </div>
 
-        <div className="mt-14 grid gap-8 border-t border-white/25 pt-2 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+        <div className="mt-10 grid gap-8 border-t border-white/25 pt-2 sm:grid-cols-2 md:mt-12 lg:grid-cols-4 lg:gap-10">
           {pilares.map((p) => (
             <div key={p.titulo} className="border-t border-white/25 pt-6 lg:border-t-0 lg:pt-8">
               <h3 className="eyebrow flex items-center gap-2.5 text-white">
@@ -73,7 +73,7 @@ export function PorQue() {
 
 export function ProdutosGrid() {
   return (
-    <section id="solucoes" className="scroll-mt-24 bg-gelo-50 py-24 md:py-32">
+    <section id="solucoes" className="scroll-mt-24 bg-gelo-50 py-16 md:py-24">
       <div className="container-dp">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
@@ -88,7 +88,7 @@ export function ProdutosGrid() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 md:mt-12 lg:grid-cols-3 lg:gap-7">
           {produtos.map((p) => (
             <Link key={p.slug} href={`/solucoes/${p.slug}`}
               className="group flex flex-col border border-gelo-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-azul-vivo/40 hover:shadow-[0_18px_40px_-24px_rgba(1,49,133,0.5)]">
@@ -134,14 +134,14 @@ export function FichaTecnica() {
     { titulo: 'Especificações', itens: especificacoes },
   ];
   return (
-    <section className="bg-white py-24 md:py-32">
+    <section className="bg-white py-16 md:py-24">
       <div className="container-dp">
         <Eyebrow className="text-azul-vivo">Ficha técnica</Eyebrow>
         <h2 className="h-display mt-6 max-w-2xl text-3xl text-tinta md:text-[2.75rem]">
           O que sustenta o sistema.
         </h2>
 
-        <div className="mt-16 grid gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-20">
           {blocos.map((b) => (
             <div key={b.titulo}>
               <h3 className="h-display text-2xl text-azul">{b.titulo}</h3>
@@ -166,14 +166,14 @@ export function FichaTecnica() {
 
 export function Aplicacoes() {
   return (
-    <section className="bg-gelo-50 py-24 md:py-32">
+    <section className="bg-gelo-50 py-16 md:py-24">
       <div className="container-dp">
         <Eyebrow className="text-azul-vivo">Onde aplicamos</Eyebrow>
         <h2 className="h-display mt-6 max-w-3xl text-3xl text-tinta md:text-[2.75rem]">
           Cada ambiente pede uma leitura diferente.
         </h2>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 md:mt-12 lg:grid-cols-3 lg:gap-7">
           {aplicacoes.map((a) => (
             <div key={a.slug} id={a.slug}
               className="group scroll-mt-24 border border-gelo-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-azul-vivo/40 hover:shadow-[0_18px_40px_-24px_rgba(1,49,133,0.5)]">
@@ -200,7 +200,7 @@ export function Aplicacoes() {
 /** Parceiros, com os logos reais — não os nomes em texto. */
 export function Clientes() {
   return (
-    <section className="bg-white py-24 md:py-28">
+    <section className="bg-white py-16 md:py-20">
       <div className="container-dp">
         <div className="text-center">
           <Eyebrow className="justify-center text-azul-vivo">Parceiros DivPro</Eyebrow>
@@ -209,16 +209,22 @@ export function Clientes() {
           </h2>
         </div>
 
-        <ul className="mt-14 grid grid-cols-2 gap-px bg-gelo-200 sm:grid-cols-3 lg:grid-cols-6">
+        {/*
+          Mural em flex-wrap, não em grid: com 25 logos um grid de 6 colunas
+          deixava 5 células vazias na última linha, lidas como placeholder.
+          Aqui a última linha simplesmente centraliza, qualquer que seja a
+          contagem. A caixa fixa por logo mantém o ritmo óptico entre marcas
+          quadradas e assinaturas largas.
+        */}
+        <ul className="mx-auto mt-10 flex max-w-[900px] flex-wrap items-center justify-center gap-x-10 gap-y-9 md:mt-12 md:gap-x-14 md:gap-y-10">
           {clientes.map((c) => (
-            <li key={c.nome}
-              className="group/logo flex items-center justify-center bg-white px-5 py-8">
+            <li key={c.nome} className="flex h-12 w-[120px] items-center justify-center md:w-[130px]">
               <Image
                 src={c.logo}
                 alt={c.nome}
                 width={270}
                 height={110}
-                className="h-11 w-auto max-w-[135px] object-contain transition-transform duration-300 group-hover/logo:scale-105"
+                className="h-full w-full object-contain opacity-85 transition-opacity duration-300 hover:opacity-100"
               />
             </li>
           ))}
@@ -235,7 +241,7 @@ export function CTAFinal() {
         className="object-cover opacity-20" />
       <div aria-hidden="true" className="modules absolute inset-0 text-white/[0.09]" />
 
-      <div className="container-dp relative py-24 text-center md:py-32">
+      <div className="container-dp relative py-16 text-center md:py-24">
         <Eyebrow className="justify-center text-white/70">Próximo passo</Eyebrow>
         <h2 className="h-display mx-auto mt-6 max-w-3xl text-3xl text-white md:text-[2.9rem]">
           Fale com a DivPro e descubra a solução ideal para o seu ambiente.
