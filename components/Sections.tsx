@@ -10,7 +10,7 @@ import {
 export function Stats() {
   return (
     <section className="border-b border-gelo-200 bg-white">
-      <div className="container-dp grid grid-cols-2 divide-gelo-200 md:grid-cols-4 md:divide-x">
+      <div className="container-dp grid grid-cols-2 divide-gelo-200 md:divide-x">
         {stats.map((s) => (
           <div key={s.label} className="px-2 py-10 md:px-8 md:text-center">
             <p className="h-display text-4xl text-azul md:text-[2.9rem]">{s.valor}</p>
@@ -241,7 +241,7 @@ export function CTAFinal() {
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-white/70">
           Mande a planta, as medidas ou só uma foto do ambiente. Devolvemos a
-          especificação com linha indicada, acabamento e prazo de instalação.
+          especificação com linha indicada, acabamento e prazo de entrega.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link href="/contato" className="btn-branco">

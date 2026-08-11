@@ -47,7 +47,7 @@ export function Hero() {
 
       <div className="relative border-t border-white/10">
         <div className="container-dp flex flex-wrap items-center gap-x-8 gap-y-2 py-5 text-[11px] uppercase tracking-label text-white/55">
-          {['Projeto', 'Fabricação', 'Instalação própria'].map((t) => (
+          {['Projeto', 'Fabricação'].map((t) => (
             <span key={t} className="flex items-center gap-2.5">
               <Nabla className="text-white/80" />
               {t}

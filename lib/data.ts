@@ -13,8 +13,8 @@ export const empresa = {
   cidade: 'Recife',
   estado: 'PE',
   telefone: '(81) 0000-0000',
-  whatsapp: '5581000000000',
-  email: 'contato@divpro.com.br',
+  whatsapp: '5581991177648',
+  email: 'atendimento@divpro.com.br',
   endereco: 'Recife — Pernambuco',
   instagram: 'https://instagram.com/divpro',
   linkedin: 'https://linkedin.com/company/divpro',
@@ -54,10 +54,11 @@ export const produtos: Produto[] = [
     nome: 'DivPro Full',
     categoria: 'Linha completa',
     resumo:
-      'Presença visual e acabamento texturizado para projetos corporativos e residenciais de alto padrão.',
+      'Presença visual e acabamento texturizado para projetos corporativos de alto padrão.',
     descricao:
-      'A linha completa, com painel de altura estendida e acabamento texturizado dupla face. Indicada quando a divisória participa da composição da arquitetura e o sanitário precisa acompanhar o padrão do resto do edifício.',
+      'A linha completa, no modelo piso-teto, com painel de altura estendida e acabamento texturizado dupla face. Indicada quando a divisória participa da composição da arquitetura e o sanitário precisa acompanhar o padrão do resto do edifício.',
     caracteristicas: [
+      'Modelo piso-teto',
       'Painel de altura estendida',
       'Acabamento texturizado dupla face',
       'Amplo repertório de padrões amadeirados',
@@ -118,17 +119,17 @@ export const produtos: Produto[] = [
   {
     slug: 'porta-divpro-fit',
     nome: 'Porta DivPro FIT',
-    sub: 'MDF UV',
-    categoria: 'Retrofit e adaptação',
+    sub: 'MDF UC',
+    categoria: 'Custo-benefício',
     resumo:
-      'Solução em MDF UV para intervenções que precisam aproveitar estruturas existentes.',
+      'Solução em MDF UC com o melhor custo-benefício da linha, resistente à água.',
     descricao:
-      'Nem toda obra começa do zero. A linha FIT é levantada sobre a condição real do ambiente — vãos irregulares, prumadas fora de esquadro, estrutura que fica — em MDF com acabamento UV. A troca resolve o sanitário sem obra pesada.',
+      'A linha FIT entrega o padrão DivPro com o investimento mais enxuto do catálogo, em MDF com acabamento UC. Resistente à água — não indicada para áreas de exposição direta e constante, como boxes de chuveiro.',
     caracteristicas: [
-      'Acabamento MDF UV',
-      'Ajuste a vãos irregulares',
-      'Aproveitamento de estrutura existente',
-      'Intervenção com o ambiente em operação',
+      'Acabamento MDF UC',
+      'Melhor custo-benefício da linha',
+      'Resistente à água',
+      'Não indicada para boxes de chuveiro',
     ],
     imagem: '/images/porta-fit.jpg',
   },
@@ -154,7 +155,7 @@ export const pilares = [
   {
     titulo: 'Estética moderna',
     texto:
-      'Acabamento texturizado e linhas limpas que se integram a projetos corporativos e residenciais de alto padrão.',
+      'Acabamento texturizado e linhas limpas que se integram a projetos corporativos de alto padrão.',
   },
 ];
 
@@ -247,14 +248,11 @@ export const marquee = [
   'Bancos',
   'Portas',
   'Retrofit',
-  'Instalação própria',
 ];
 
 export const stats = [
   { valor: '5 anos', label: 'De garantia' },
-  { valor: '24', label: 'Parceiros atendidos' },
   { valor: '6', label: 'Linhas de solução' },
-  { valor: '150°C', label: 'Prensagem dos painéis' },
 ];
 
 // 24 parceiros, com os logos extraídos do Portfólio 2026.
@@ -283,4 +281,11 @@ export const clientes = [
   { nome: 'Colégio Damas', logo: '/logos/colegio-damas.png' },
   { nome: 'Wellness Club', logo: '/logos/wellness-club.png' },
   { nome: 'Pernambuco Construtora', logo: '/logos/pernambuco-construtora.png' },
+  { nome: 'BYD', logo: '/logos/byd.svg' },
+];
+
+export type Representante = { estado: string; cidade: string; empresa: string };
+
+export const representantes: Representante[] = [
+  { estado: 'Alagoas', cidade: 'Maceió', empresa: 'Divine Divisórias' },
 ];

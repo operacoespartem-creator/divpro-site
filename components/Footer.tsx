@@ -12,8 +12,8 @@ export function Footer() {
         <div className="lg:col-span-1">
           <Logo variant="light" width={172} />
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-gelo/70">
-            {empresa.descricaoCurta} Projeto, fabricação e instalação sob uma
-            única responsabilidade.
+            {empresa.descricaoCurta} Projeto e fabricação sob uma única
+            responsabilidade.
           </p>
           <div className="mt-7 flex gap-3">
             <a

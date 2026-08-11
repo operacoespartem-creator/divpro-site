@@ -35,7 +35,7 @@ export default function ContatoPage() {
           </h1>
           <p className="mt-6 max-w-md text-[15px] leading-relaxed text-tinta-600">
             Mande a planta, as medidas ou só uma foto do ambiente. Devolvemos a
-            especificação com linha indicada, acabamento e prazo de instalação.
+            especificação com linha indicada, acabamento e prazo de entrega.
           </p>
 
           <ul className="mt-12 divide-y divide-gelo-200 border-y border-gelo-200">

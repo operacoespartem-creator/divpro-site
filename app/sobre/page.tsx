@@ -7,7 +7,7 @@ import { stats, empresa } from '@/lib/data';
 export const metadata: Metadata = {
   title: 'Sobre',
   description:
-    'A DivPro desenvolve divisórias sanitárias planejadas para ambientes corporativos, com projeto, fabricação e instalação sob uma única responsabilidade.',
+    'A DivPro desenvolve divisórias sanitárias planejadas para ambientes corporativos, com projeto e fabricação sob uma única responsabilidade.',
 };
 
 const etapas = [
@@ -25,11 +25,6 @@ const etapas = [
     titulo: 'Fabricação',
     texto:
       'Produção sob medida a partir do levantamento aprovado. Cada módulo sai pronto para o vão a que pertence.',
-  },
-  {
-    titulo: 'Instalação',
-    texto:
-      'Equipe própria, com obra em operação quando necessário. Quem especificou responde pela entrega.',
   },
 ];
 
@@ -56,18 +51,18 @@ export default function SobrePage() {
         <div className="container-dp relative">
           <Eyebrow className="text-azul-vivo">Sobre a {empresa.nome}</Eyebrow>
           <h1 className="h-display mt-6 max-w-3xl text-[2.4rem] text-white md:text-6xl">
-            Boas soluções começam antes da instalação.
+            Boas soluções começam pela leitura do espaço.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-gelo/70">
-            Trabalhamos com divisórias sanitárias para ambientes corporativos em{' '}
-            {empresa.cidade} e em todo o Nordeste — do estudo do espaço ao
-            acabamento final, sob uma única responsabilidade.
+            Trabalhamos com divisórias sanitárias para ambientes corporativos em
+            todo o Brasil — do estudo do espaço ao acabamento final, sob uma
+            única responsabilidade.
           </p>
         </div>
       </section>
 
       <section className="border-b border-gelo-200 bg-white">
-        <div className="container-dp grid grid-cols-2 divide-gelo-200 md:grid-cols-4 md:divide-x">
+        <div className="container-dp grid grid-cols-2 divide-gelo-200 md:divide-x">
           {stats.map((s) => (
             <div key={s.label} className="px-2 py-10 md:px-8 md:text-center">
               <p className="h-display text-4xl text-azul md:text-5xl">
@@ -83,14 +78,14 @@ export default function SobrePage() {
         <div className="container-dp">
           <Eyebrow className="text-azul-vivo">Como um projeto anda</Eyebrow>
           <h2 className="h-display mt-6 max-w-2xl text-3xl text-tinta md:text-[2.75rem]">
-            Quatro etapas, um interlocutor.
+            Três etapas, um interlocutor.
           </h2>
 
           {/*
             Numeração aqui carrega informação real: é uma sequência,
             cada etapa depende da anterior.
           */}
-          <ol className="mt-16 grid gap-px bg-gelo-200 md:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-16 grid gap-px bg-gelo-200 md:grid-cols-3">
             {etapas.map((e, i) => (
               <li key={e.titulo} className="bg-white p-8">
                 <div className="flex items-center gap-3">

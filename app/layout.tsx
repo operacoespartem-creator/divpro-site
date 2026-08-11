@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: `%s | ${empresa.nome}`,
   },
   description:
-    'Divisórias sanitárias planejadas para ambientes corporativos. Projeto, fabricação e instalação sob uma única responsabilidade, em Recife e Pernambuco.',
+    'Divisórias sanitárias planejadas para ambientes corporativos. Projeto e fabricação sob uma única responsabilidade, em todo o Brasil.',
   keywords: [
     'divisórias sanitárias',
     'divisórias de banheiro',
