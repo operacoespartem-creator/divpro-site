@@ -61,8 +61,12 @@ export default function SolucaoPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Faixa larga: respeita o formato panorâmico das fotos de obra */}
-      <section className="relative aspect-[16/7] w-full overflow-hidden bg-azul-900 md:aspect-[21/7]">
+      {/*
+        As fotos são 16:9 (não panorâmicas). Manter a mesma proporção larga
+        do mobile no desktop em vez de aspect-[21/7] — esse crop mais agressivo
+        cortava quase metade da altura da imagem.
+      */}
+      <section className="relative aspect-[16/7] w-full overflow-hidden bg-azul-900">
         <Image
           src={produto.imagem}
           alt={`Aplicação da linha ${produto.nome}`}
