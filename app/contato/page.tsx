@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import type { ComponentType } from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { Eyebrow, Nabla, WhatsAppGlyph } from '@/components/Brand';
-import { empresa, produtos } from '@/lib/data';
+import { Eyebrow, WhatsAppGlyph } from '@/components/Brand';
+import { ContatoForm } from '@/components/ContatoForm';
+import { empresa } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Contato',
@@ -36,9 +37,6 @@ const canais: {
   },
   { icone: MapPin, rotulo: 'Onde estamos', valor: empresa.endereco },
 ];
-
-const campo =
-  'w-full border border-gelo-200 bg-white px-4 py-3.5 text-[15px] text-tinta transition-colors placeholder:text-tinta-400 focus:border-azul focus:outline-none';
 
 export default function ContatoPage() {
   return (
@@ -89,85 +87,7 @@ export default function ContatoPage() {
             Respondemos em até um dia útil.
           </p>
 
-          <form className="mt-8 space-y-4" action="/contato" method="post">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label htmlFor="nome" className="eyebrow text-tinta-400">
-                  Nome
-                </label>
-                <input id="nome" name="nome" required className={`${campo} mt-2`} />
-              </div>
-              <div>
-                <label htmlFor="empresa" className="eyebrow text-tinta-400">
-                  Empresa
-                </label>
-                <input id="empresa" name="empresa" className={`${campo} mt-2`} />
-              </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label htmlFor="email" className="eyebrow text-tinta-400">
-                  E-mail
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className={`${campo} mt-2`}
-                />
-              </div>
-              <div>
-                <label htmlFor="telefone" className="eyebrow text-tinta-400">
-                  Telefone
-                </label>
-                <input
-                  id="telefone"
-                  name="telefone"
-                  type="tel"
-                  className={`${campo} mt-2`}
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="linha" className="eyebrow text-tinta-400">
-                Linha de interesse
-              </label>
-              <select id="linha" name="linha" className={`${campo} mt-2`} defaultValue="">
-                <option value="">Ainda não sei</option>
-                {produtos.map((p) => (
-                  <option key={p.slug} value={p.slug}>
-                    {p.nome}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="mensagem" className="eyebrow text-tinta-400">
-                O ambiente
-              </label>
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                rows={5}
-                placeholder="Tipo de ambiente, quantidade de cabines, prazo previsto…"
-                className={`${campo} mt-2 resize-y`}
-              />
-            </div>
-
-            <button type="submit" className="btn-primary w-full">
-              Enviar solicitação
-            </button>
-
-            <p className="flex items-start gap-2.5 pt-1 text-xs leading-relaxed text-tinta-400">
-              <Nabla className="mt-1 text-azul-vivo" />
-              Formulário sem back-end nesta versão. Conecte a um endpoint,
-              Formspree ou route handler antes de publicar.
-            </p>
-          </form>
+          <ContatoForm />
         </div>
       </div>
     </section>

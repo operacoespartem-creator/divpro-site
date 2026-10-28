@@ -19,6 +19,10 @@ export const empresa = {
   instagram: 'https://www.instagram.com/divprodivisorias/',
 };
 
+// ID do formulário no Formspree (formspree.io → New form → destino
+// atendimento@divpro.com.br). É o trecho final do endpoint /f/<id>.
+export const formspreeId = 'mdekpywl';
+
 export type Produto = {
   slug: string;
   nome: string;
@@ -36,15 +40,14 @@ export const produtos: Produto[] = [
     slug: 'divpro-basic',
     nome: 'DivPro Basic',
     categoria: 'Linha essencial',
-    resumo:
-      'Sistema estrutural completo para áreas de grande circulação, com montagem rápida e repetição confiável.',
+    resumo: 'Resistência e eficiência para projetos de alto fluxo.',
     descricao:
-      'Montantes estruturais de alumínio fixados rigidamente ao piso e painéis em laminado estrutural TS. É a configuração direta para projetos que precisam de padronização e volume, sem abrir mão da resistência a impacto e ao uso intenso.',
+      'Divisórias em laminado estrutural TS, com acabamento texturizado e montantes de alumínio com fixação rígida ao piso, desenvolvidas para uso intenso e padronização em escala.',
     caracteristicas: [
-      'Montantes estruturais em alumínio',
-      'Painéis em laminado estrutural TS (fórmica maciça)',
-      'Fixação rígida ao piso e às paredes',
-      'Instalação rápida e padronizada',
+      'Laminado estrutural TS com acabamento texturizado',
+      'Montantes de alumínio com fixação rígida ao piso',
+      'Desenvolvida para uso intenso e alto fluxo',
+      'Padronização em escala',
     ],
     imagem: '/images/basic.jpg',
   },
@@ -52,16 +55,15 @@ export const produtos: Produto[] = [
     slug: 'divpro-full',
     nome: 'DivPro Full',
     categoria: 'Linha completa',
-    resumo:
-      'Presença visual e acabamento texturizado para projetos corporativos de alto padrão.',
+    resumo: 'Arquitetura, privacidade e resistência em uma solução piso-teto.',
     descricao:
-      'A linha completa, no modelo piso-teto, com painel de altura estendida e acabamento texturizado dupla face. Indicada quando a divisória participa da composição da arquitetura e o sanitário precisa acompanhar o padrão do resto do edifício.',
+      'Divisórias em laminado estrutural TS de altura estendida, com acabamento texturizado dupla face, desenvolvidas para integrar o sanitário à arquitetura do ambiente, sem abrir mão da durabilidade e do desempenho técnico.',
     caracteristicas: [
       'Modelo piso-teto',
-      'Painel de altura estendida',
+      'Laminado estrutural TS de altura estendida',
       'Acabamento texturizado dupla face',
-      'Amplo repertório de padrões amadeirados',
-      'Linhas limpas, sem estrutura aparente',
+      'Integração do sanitário à arquitetura do ambiente',
+      'Máxima privacidade',
     ],
     imagem: '/images/full.jpg',
     destaque: true,
@@ -70,67 +72,85 @@ export const produtos: Produto[] = [
     slug: 'divpro-slim',
     nome: 'DivPro Slim',
     categoria: 'Perfil reduzido',
-    resumo:
-      'Leveza visual e aproveitamento máximo de área, para ambientes de linguagem contemporânea.',
+    resumo: 'Leveza visual e eficiência para ambientes compactos.',
     descricao:
-      'Perfil estrutural enxuto, com menos estrutura aparente e leitura visual contínua. Mantém a resistência do sistema monolítico, mas com presença discreta — para quando a divisória precisa integrar em vez de pesar.',
+      'Divisórias com perfil estrutural minimalista e menor presença aparente, proporcionando uma estética mais contínua e discreta, sem abrir mão da resistência e robustez do laminado estrutural TS.',
     caracteristicas: [
-      'Perfil estrutural reduzido',
-      'Menos estrutura aparente',
-      'Ganho de área útil por cabine',
-      'Leitura visual contínua',
+      'Perfil estrutural minimalista',
+      'Menor presença aparente',
+      'Estética contínua e discreta',
+      'Indicada para ambientes compactos',
+      'Resistência do laminado estrutural TS',
     ],
     imagem: '/images/slim.jpg',
-  },
-  {
-    slug: 'banco-divpro',
-    nome: 'Banco DivPro',
-    categoria: 'Apoio e mobiliário',
-    resumo:
-      'O apoio que completa a funcionalidade de vestiários, sanitários e áreas de suporte.',
-    descricao:
-      'Bancos no mesmo material monolítico das divisórias, com estrutura autoportante e comprimentos sob medida. Totalmente à prova d’água, resolvem o vestiário sem introduzir um material novo no ambiente.',
-    caracteristicas: [
-      'Mesmo material monolítico das divisórias',
-      'Estrutura autoportante',
-      'Comprimentos sob medida',
-      'À prova d’água, para áreas molhadas',
-    ],
-    imagem: '/images/banco.jpg',
   },
   {
     slug: 'porta-divpro',
     nome: 'Porta DivPro',
     sub: 'Granito · Alvenaria',
     categoria: 'Porta avulsa',
-    resumo:
-      'Portas para cabines já executadas em granito ou alvenaria, no padrão dimensional do sistema.',
+    resumo: 'A solução ideal para modernizar e padronizar ambientes existentes.',
     descricao:
-      'Quando a cabine já existe em granito ou alvenaria, a porta é o que define o acabamento e a operação. Folhas, ferragens e batentes desenvolvidos no mesmo padrão das divisórias — inclusive em versões e cores para ambientes infantis.',
+      'Portas com folhas, batentes e ferragens compatíveis com o sistema DivPro, desenvolvidas para instalações em granito ou alvenaria, garantindo acabamento, funcionalidade e padronização visual.',
     caracteristicas: [
-      'Para cabines em granito ou alvenaria',
-      'Ferragens compatibilizadas com o sistema',
-      'Versões e cores para ambientes infantis',
-      'Reposição por componente',
+      'Para instalações em granito ou alvenaria',
+      'Folhas, batentes e ferragens compatíveis com o sistema',
+      'Modernização de ambientes existentes',
+      'Padronização visual',
     ],
     imagem: '/images/porta.jpg',
   },
   {
     slug: 'porta-divpro-fit',
     nome: 'Porta DivPro FIT',
-    sub: 'MDF UC',
+    sub: 'UC Ultra Premium (Hidro)',
     categoria: 'Custo-benefício',
-    resumo:
-      'Solução em MDF UC com o melhor custo-benefício da linha, resistente à água.',
+    resumo: 'Praticidade e economia para reformas e adaptações.',
     descricao:
-      'A linha FIT entrega o padrão DivPro com o investimento mais enxuto do catálogo, em MDF com acabamento UC. Resistente à água — não indicada para áreas de exposição direta e constante, como boxes de chuveiro.',
+      'Portas em UC Ultra Premium (Hidro), compatíveis com estruturas existentes, oferecendo o padrão DivPro com investimento otimizado e resistência à água, sendo indicadas para ambientes sem exposição direta e constante à água.',
     caracteristicas: [
-      'Acabamento MDF UC',
-      'Melhor custo-benefício da linha',
+      'Acabamento UC Ultra Premium (Hidro)',
+      'Compatível com estruturas existentes',
+      'Investimento otimizado',
       'Resistente à água',
-      'Não indicada para boxes de chuveiro',
+      'Não indicada para exposição direta e constante à água',
     ],
     imagem: '/images/porta-fit.jpg',
+  },
+  {
+    slug: 'banco-divpro',
+    nome: 'Banco DivPro',
+    categoria: 'Apoio e mobiliário',
+    resumo: 'Durabilidade e funcionalidade para vestiários completos.',
+    descricao:
+      'Bancos em laminado estrutural TS, com estrutura autoportante e comprimentos sob medida, totalmente à prova d’água e desenvolvidos para integrar o vestiário ao padrão das divisórias DivPro.',
+    caracteristicas: [
+      'Laminado estrutural TS',
+      'Estrutura autoportante',
+      'Comprimentos sob medida',
+      'Totalmente à prova d’água',
+      'Mesmo padrão das divisórias DivPro',
+    ],
+    imagem: '/images/banco.jpg',
+  },
+  {
+    slug: 'lockers-divpro',
+    nome: 'Lockers DivPro',
+    sub: 'Armários · Guarda-volumes',
+    categoria: 'Armazenamento',
+    resumo:
+      'Organização, segurança e resistência para ambientes de uso coletivo.',
+    descricao:
+      'Armários e guarda-volumes em laminado estrutural TS, desenvolvidos para vestiários, academias, clubes, indústrias e ambientes corporativos, com estrutura robusta, resistência à umidade e configurações sob medida.',
+    caracteristicas: [
+      'Laminado estrutural TS',
+      'Estrutura robusta',
+      'Resistência à umidade',
+      'Configurações sob medida',
+      'Vestiários, academias, clubes, indústrias e escritórios',
+    ],
+    // TODO: trocar pela foto dos lockers quando a DivPro enviar.
+    imagem: '/images/academias.jpg',
   },
 ];
 
@@ -246,12 +266,13 @@ export const marquee = [
   'À prova d’água',
   'Bancos',
   'Portas',
+  'Armários',
   'Retrofit',
 ];
 
 export const stats = [
   { valor: '5 anos', label: 'De garantia' },
-  { valor: '6', label: 'Linhas de solução' },
+  { valor: '7', label: 'Linhas de solução' },
 ];
 
 // 24 parceiros, com os logos extraídos do Portfólio 2026.

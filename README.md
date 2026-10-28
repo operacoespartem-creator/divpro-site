@@ -11,7 +11,7 @@ institucionais, fotos de obra e carteira de parceiros vêm todos de lá.
 ```bash
 npm install
 npm run dev     # http://localhost:3000
-npm run build   # 13 rotas estáticas
+npm run build   # 14 rotas estáticas
 ```
 
 Deploy: importar no Vercel. Sem variáveis de ambiente nesta versão.
@@ -25,8 +25,11 @@ estático. Se preferir SSR/ISR no Vercel, remova essa linha.
 
 1. **Contato** (`lib/data.ts` → `empresa`): telefone, WhatsApp, e-mail e redes
    estão com placeholder.
-2. **Formulário** (`app/contato/page.tsx`) não tem back-end. Conectar a um route
-   handler, Formspree ou equivalente.
+2. **Formulário** (`components/ContatoForm.tsx`) envia pelo Formspree. Criar o
+   form em formspree.io com destino atendimento@divpro.com.br e colar o ID em
+   `lib/data.ts` → `formspreeId`.
+4. **Foto dos Lockers** (`lib/data.ts` → `lockers-divpro`): está com
+   `academias.jpg` como placeholder até chegar a foto oficial.
 3. **Uso das marcas dos 24 parceiros**: confirmar autorização. Os logos foram
    extraídos do portfólio, mas exibi-los em site público é outra conversa.
 
@@ -113,7 +116,7 @@ queimado.
 
 ## Qualidade
 
-- Build limpo, 13 rotas estáticas
+- Build limpo, 14 rotas estáticas
 - Responsivo até 390 px, validado por screenshot
 - Console sem erros em todas as páginas
 - Foco de teclado visível; `prefers-reduced-motion` respeitado

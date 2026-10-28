@@ -79,11 +79,11 @@ export function ProdutosGrid() {
           <div>
             <Eyebrow className="text-azul-vivo">Soluções</Eyebrow>
             <h2 className="h-display mt-6 max-w-2xl text-3xl text-tinta md:text-[2.75rem]">
-              Seis linhas, um único sistema.
+              Sete linhas, um único sistema.
             </h2>
           </div>
           <p className="max-w-sm text-[15px] leading-relaxed text-tinta-600">
-            Divisória, banco e porta saem do mesmo padrão dimensional e do mesmo
+            Divisória, banco, porta e armário saem do mesmo padrão dimensional e do mesmo
             material monolítico. É o que garante continuidade no ambiente inteiro.
           </p>
         </div>

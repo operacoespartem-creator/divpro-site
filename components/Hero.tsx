@@ -39,7 +39,7 @@ export function Hero() {
             </Link>
             <Link href="/#solucoes"
               className="btn-ghost border-white/35 text-white hover:border-white hover:bg-white/10">
-              Ver as 6 linhas
+              Ver as 7 linhas
             </Link>
           </div>
 
